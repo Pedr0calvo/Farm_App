@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   buttonLoc: {
     position: "absolute",
     left: 20,
-    bottom: 80,
+    bottom: 90,
     borderColor: "orange",
     alignItems: "center",
     justifyContent: "center",

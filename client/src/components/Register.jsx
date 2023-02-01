@@ -96,7 +96,7 @@ const Register = () => {
 
 const styles = StyleSheet.create({
   cocontainer: {
-    paddingTop: 200,
+    paddingTop: 100,
     justifyContent: "center",
     alignItems: "center",
   },

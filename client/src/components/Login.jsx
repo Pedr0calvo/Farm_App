@@ -15,7 +15,7 @@ import {
 } from "react-native";
 import Constants from "expo-constants";
 import { KJUR } from "jsrsasign";
-import { APP_NAME } from "@env";
+import { APP_SIGNATURE } from "@env";
 import { postUser, setUserFalse } from "../actions";
 import { useNavigation } from "@react-navigation/native";
 import { useContext } from "react";
@@ -66,7 +66,7 @@ const Login = () => {
         "HS256",
         sHeader,
         sPayload,
-        "PEDRO123456pedro%&789456PEDRO%&123456pedro789456ACSOJA"
+        APP_SIGNATURE
       );
       dispatch(postUser(sJWT)).then((e) => {
         handleuserMod(user.user);
@@ -112,7 +112,7 @@ const Login = () => {
 
 const styles = StyleSheet.create({
   cocontainer: {
-    paddingTop: 200,
+    paddingTop: 100,
     justifyContent: "center",
     alignItems: "center",
   },

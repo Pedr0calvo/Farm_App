@@ -13,7 +13,7 @@ export const getFarms = (user) => {
   return async function (dispatch) {
     var config = {
       method: "get",
-      url: "https://farm-app-back-production.up.railway.app/farms",
+      url: "http://192.168.100.12:3001/farms",
       headers: { user },
     };
 
@@ -34,7 +34,7 @@ export const postFarms = (farm, userMod) => {
   return async function (dispatch) {
     var config = {
       method: "post",
-      url: "https://farm-app-back-production.up.railway.app/farms",
+      url: "http://192.168.100.12:3001/farms",
       headers: {
         "Content-Type": "application/json",
       },
@@ -57,7 +57,7 @@ export const putFarms = (farm) => {
 
     var config = {
       method: "put",
-      url: `https://farm-app-back-production.up.railway.app/farms/delete/${farm}`,
+      url: `http://192.168.100.12:3001/farms/delete/${farm}`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -77,7 +77,7 @@ export const getTasks = (id) => {
   return async function (dispatch) {
     var config = {
       method: "get",
-      url: "https://farm-app-back-production.up.railway.app/tasks",
+      url: "http://192.168.100.12:3001/tasks",
       headers: {
         id,
       },
@@ -100,7 +100,7 @@ export const postTasks = (text, modalfarm) => {
   return async function (dispatch) {
     var config = {
       method: "post",
-      url: "https://farm-app-back-production.up.railway.app/tasks",
+      url: "http://192.168.100.12:3001/tasks",
       headers: {
         "Content-Type": "application/json",
       },
@@ -121,7 +121,7 @@ export const getAplications = (id) => {
   return async function (dispatch) {
     var config = {
       method: "get",
-      url: "https://farm-app-back-production.up.railway.app/aplications",
+      url: "http://192.168.100.12:3001/aplications",
       headers: {
         id,
       },
@@ -144,7 +144,7 @@ export const postAplications = (aplica, modalfarm) => {
   return async function (dispatch) {
     var config = {
       method: "post",
-      url: "https://farm-app-back-production.up.railway.app/aplications",
+      url: "http://192.168.100.12:3001/aplications",
       headers: {
         "Content-Type": "application/json",
       },
@@ -165,7 +165,7 @@ export const getYields = (id) => {
   return async function (dispatch) {
     var config = {
       method: "get",
-      url: "https://farm-app-back-production.up.railway.app/yield",
+      url: "http://192.168.100.12:3001/yield",
       headers: { id },
     };
 
@@ -186,7 +186,7 @@ export const postYield = (harvest, modalfarm) => {
   return async function (dispatch) {
     var config = {
       method: "post",
-      url: "https://farm-app-back-production.up.railway.app/yield",
+      url: "http://192.168.100.12:3001/yield",
       headers: {
         "Content-Type": "application/json",
       },
@@ -207,7 +207,7 @@ export const getUsers = () => {
   return async function (dispatch) {
     var config = {
       method: "get",
-      url: "https://farm-app-back-production.up.railway.app/user",
+      url: "http://192.168.100.12:3001/user",
       headers: {},
     };
 
@@ -228,7 +228,7 @@ export const createUser = (payload) => {
   return async function (dispatch) {
     var config = {
       method: "post",
-      url: "https://farm-app-back-production.up.railway.app/user",
+      url: "http://192.168.100.12:3001/user",
       headers: {
         "Content-Type": "application/json",
       },
@@ -249,7 +249,7 @@ export const postUser = (JWT) => {
   return async function (dispatch) {
     var config = {
       method: "get",
-      url: "https://farm-app-back-production.up.railway.app/user/login",
+      url: "http://192.168.100.12:3001/user/login",
       headers: { data: JWT },
     };
 
