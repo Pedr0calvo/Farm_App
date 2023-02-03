@@ -25,7 +25,9 @@ router.post("/", async (req, res) => {
       },
     } = KJUR.jws.JWS.parse(payload);
     let hashedPassword = await bcrypt.hash(nohashedPassword, 8);
-    createUser(user, hashedPassword).then(() => res.sendStatus(200));
+    createUser(user.toLowerCase(), hashedPassword.toLowerCase()).then(() =>
+      res.sendStatus(200)
+    );
   } catch (error) {
     res.status(400);
   }

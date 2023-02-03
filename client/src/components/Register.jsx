@@ -57,7 +57,7 @@ const Register = () => {
     "HS256",
     sHeader,
     sPayload,
-    "PEDRO123456pedro%&789456PEDRO%&123456pedro789456ACSOJA"
+    APP_NAME
   );
 
   const sendUser = (e) => {

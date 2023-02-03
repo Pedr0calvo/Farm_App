@@ -15,7 +15,7 @@ import {
 } from "react-native";
 import Constants from "expo-constants";
 import { KJUR } from "jsrsasign";
-import { APP_SIGNATURE } from "@env";
+import { APP_NAME } from "@env";
 import { postUser, setUserFalse } from "../actions";
 import { useNavigation } from "@react-navigation/native";
 import { useContext } from "react";
@@ -66,7 +66,7 @@ const Login = () => {
         "HS256",
         sHeader,
         sPayload,
-        APP_SIGNATURE
+        APP_NAME
       );
       dispatch(postUser(sJWT)).then((e) => {
         handleuserMod(user.user);
