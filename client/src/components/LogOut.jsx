@@ -13,7 +13,7 @@ const LogOut = () => {
 
   return (
     <View>
-      <Dropdown
+      {/* <Dropdown
         style={[styles.dropdown, isFocus && { borderColor: "blue" }]}
         placeholderStyle={styles.placeholderStyle}
         selectedTextStyle={styles.selectedTextStyle}
@@ -28,9 +28,9 @@ const LogOut = () => {
           console.log("holaaaaaaaaaaaaaaaaaaaaa");
         }}
         renderRightIcon={() => (
+          )}
+      /> */}
           <Icon name="dots-three-vertical" size={20}></Icon>
-        )}
-      />
     </View>
   );
 };

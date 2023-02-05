@@ -57,7 +57,7 @@ const Register = () => {
     "HS256",
     sHeader,
     sPayload,
-    APP_NAME
+    "PEDRO123456pedro%&789456PEDRO%&123456pedro789456ACSOJA"
   );
 
   const sendUser = (e) => {
@@ -119,10 +119,10 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
     borderRadius: 20,
-    backgroundColor: "green",
+    backgroundColor: "#556b2f",
   },
   buttonSelect: {
-    backgroundColor: "green",
+    backgroundColor: "#556b2f",
     paddingTop: 15,
     paddingBottom: 15,
   },

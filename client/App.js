@@ -17,6 +17,7 @@ import Login from "./src/components/Login";
 import { UserProvider } from "./src/components/UserContext";
 import Register from "./src/components/Register";
 import LogOut from "./src/components/LogOut";
+import Icon from "react-native-vector-icons/Entypo";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,19 +28,34 @@ export default function App() {
         <FarmProvider>
           <UserProvider>
             <NavigationContainer>
-              <Stack.Navigator>
+              <Stack.Navigator
+                screenOptions={{
+                  headerStyle: {
+                    backgroundColor: "#556b2f",
+                  },
+                }}
+              >
                 <Stack.Screen
                   name="Login"
                   component={Login}
                   options={{ title: "" }}
                 />
                 <Stack.Screen
+                  name="MenuFlot"
+                  component={MenuFlot}
+                  options={{
+                    title: "",
+                    headerTitle: null,
+                    headerLeft: null,
+                    headerBackTitleVisible: false,
+                    // headerTintColor: "#273469",
+                    headerLeft: () => <Icon onPress={() => navigate(null)} />,
+                  }}
+                />
+                <Stack.Screen
                   name="Main"
                   component={Main}
-                  options={{
-                    title: "Quinta",
-                    // headerTitle: () => <LogOut></LogOut>,
-                  }}
+                  options={{ title: "" }}
                 />
                 <Stack.Screen
                   name="Useless"
@@ -49,11 +65,6 @@ export default function App() {
                 <Stack.Screen
                   name="MenuSelect"
                   component={MenuSelect}
-                  options={{ title: "" }}
-                />
-                <Stack.Screen
-                  name="MenuFlot"
-                  component={MenuFlot}
                   options={{ title: "" }}
                 />
                 <Stack.Screen

@@ -4,6 +4,7 @@ const router = Router();
 const { Users } = require("../db");
 const bcrypt = require("bcrypt");
 const { KJUR } = require("jsrsasign");
+const logUser = require("../controllers/userController");
 
 router.get("/", async (req, res) => {
   try {
@@ -43,23 +44,9 @@ router.get("/login", async (req, res) => {
         },
       },
     } = KJUR.jws.JWS.parse(data);
-    const userLogin = await Users.findOne({
-      where: { user },
-    });
-    if (userLogin) {
-      let comparePwd = await bcrypt.compare(
-        nohashedPassword,
-        userLogin.hashedPassword.toString()
-      );
-      if (comparePwd) {
-        Users.update({ isActive: true }, { where: { user } });
-        res.status(200).send({ msg: "Authorized" });
-      } else {
-        res.status(500).send({ msg: "Unauthorized" });
-      }
-    } else {
-      res.status(500).send({ msg: "Unauthorized" });
-    }
+    logUser(user.toLowerCase(), nohashedPassword.toLowerCase()).then(() =>
+      res.sendStatus(200)
+    );
   } catch (error) {
     res.status(500).send(error.message);
   }

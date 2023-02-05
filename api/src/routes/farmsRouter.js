@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     const { user } = req.headers;
     const user_Id = await Users.findOne({ where: { user } });
     const farms = await Farms.findAll({ where: { userId: user_Id.id } });
-    console.log(user_Id.id, farms);
+    console.log(farms);
     res.status(200).send(farms);
   } catch (error) {
     res.status(404).send(error);

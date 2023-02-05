@@ -66,12 +66,12 @@ const Login = () => {
         "HS256",
         sHeader,
         sPayload,
-        APP_NAME
+        "PEDRO123456pedro%&789456PEDRO%&123456pedro789456ACSOJA"
       );
       dispatch(postUser(sJWT)).then((e) => {
         handleuserMod(user.user);
         setTimeout(() => {
-          navigation.navigate("Main");
+          navigation.navigate("MenuFlot");
         }, 1000);
       });
       setUser({ user: "", nohashedPassword: "" });
@@ -135,10 +135,10 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
     borderRadius: 20,
-    backgroundColor: "green",
+    backgroundColor: "#556b2f",
   },
   buttonSelect: {
-    backgroundColor: "green",
+    backgroundColor: "#556b2f",
     paddingTop: 15,
     paddingBottom: 15,
   },

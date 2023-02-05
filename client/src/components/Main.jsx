@@ -45,11 +45,13 @@ import FarmContext from "./FarmContext";
 const Main = ({ navigation }) => {
   const { modalfarm, handleModalFarm } = useContext(FarmContext);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getFarms(userMod));
     dispatch(getUsers());
     handleModalFarm();
-  }, []);
+  });
+
   const farms = useSelector((state) => state.allFarms);
   const { modal, handleModal } = useContext(ModalContext);
   const { userMod, handleuserMod } = useContext(UserContext);
@@ -70,7 +72,7 @@ const Main = ({ navigation }) => {
   //   }, 4000);
   // };
   const refreshList = () => {
-    dispatch(getFarms(userMod));
+    dispatch(getFarms(userMod.toLowerCase()));
   };
 
   return (
@@ -120,7 +122,7 @@ const Main = ({ navigation }) => {
               <Icon5 name="reload" size={38} color="black" />
             </View>
           </TouchableOpacity>
-          <ButtonFlot></ButtonFlot>
+          {/* <ButtonFlot></ButtonFlot> */}
           <ModalComp props={selected} />
         </View>
       ) : (

@@ -43,6 +43,12 @@ const MenuFlot = () => {
           <Text>Notes</Text>
         </Pressable>
       </View>
+      <Pressable
+        style={styles.toMain}
+        onPress={() => navigation.navigate("Main")}
+      >
+        <Text>Go to farms</Text>
+      </Pressable>
     </View>
   );
 };
@@ -84,6 +90,16 @@ const styles = StyleSheet.create({
     backgroundColor: "orange",
     margin: 20,
     borderRadius: 10,
+  },
+  toMain: {
+    marginTop: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 200,
+    height: 80,
+    backgroundColor: "#556b2f",
+    borderRadius: 25
+    // borderWidth: 1,
   },
 });
 
