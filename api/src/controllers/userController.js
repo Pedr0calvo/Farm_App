@@ -1,12 +1,12 @@
 const { Users } = require("../db");
-const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
 
 const logUser = async (user, nohashedPassword) => {
   const userLogin = await Users.findOne({
     where: { user },
   });
   if (userLogin) {
-    bcrypt
+    bcryptjs
       .compare(nohashedPassword, hashPass)
       .then(() => console.log(nohashedPassword, hashPass, comparePwd))
       .catch(() => console.log(nohashedPassword, hashPass, comparePwd));

@@ -45,20 +45,9 @@ router.post("/login", async (req, res) => {
         },
       },
     } = KJUR.jws.JWS.parse(data);
-    // await logUser(user.toLowerCase(), nohashedPassword.toLowerCase()).then(
-    //   (r) => console.log(r)
-    // );
-    console.log(user, nohashedPassword);
-    const userLogin = await Users.findOne({
-      where: { user },
-    });
-    if (userLogin) {
-      bcryptjs
-        .compare(nohashedPassword, hashPass)
-        .then(() => console.log(nohashedPassword, hashPass, "comparePwd"))
-        .catch(() => console.log(nohashedPassword, hashPass, comparePwd));
-      res.sendStatus(200);
-    }
+    await logUser(user.toLowerCase(), nohashedPassword.toLowerCase()).then(
+      (r) => console.log(r)
+    );
   } catch (error) {
     res.status(500).send(error.message);
   }
