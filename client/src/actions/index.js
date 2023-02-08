@@ -248,7 +248,7 @@ export const createUser = (payload) => {
 export const postUser = (JWT) => {
   return async function (dispatch) {
     var config = {
-      method: "get",
+      method: "post",
       url: "http://192.168.100.12:3001/user/login",
       headers: { data: JWT },
     };

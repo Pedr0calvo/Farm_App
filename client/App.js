@@ -18,6 +18,7 @@ import { UserProvider } from "./src/components/UserContext";
 import Register from "./src/components/Register";
 import LogOut from "./src/components/LogOut";
 import Icon from "react-native-vector-icons/Entypo";
+import Icon2 from "react-native-vector-icons/Entypo";
 
 const Stack = createNativeStackNavigator();
 
@@ -46,10 +47,9 @@ export default function App() {
                   options={{
                     title: "",
                     headerTitle: null,
-                    headerLeft: null,
                     headerBackTitleVisible: false,
-                    // headerTintColor: "#273469",
                     headerLeft: () => <Icon onPress={() => navigate(null)} />,
+                    headerRight: () => <LogOut></LogOut>,
                   }}
                 />
                 <Stack.Screen

@@ -50,7 +50,7 @@ const Main = ({ navigation }) => {
     dispatch(getFarms(userMod));
     dispatch(getUsers());
     handleModalFarm();
-  });
+  }, []);
 
   const farms = useSelector((state) => state.allFarms);
   const { modal, handleModal } = useContext(ModalContext);
